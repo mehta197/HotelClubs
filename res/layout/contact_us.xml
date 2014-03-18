@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_1" >
+
+    <RelativeLayout
+        android:id="@+id/lytTitlebar"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/contactUsBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_1"
+            android:contentDescription="@string/backbutton"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/contactUsBack"
+            android:gravity="center"
+            android:shadowDx="0.5"
+            android:shadowDy="0.5"
+            android:shadowRadius="0.5"
+            android:text="@string/Contact"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/lytMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lytTitlebar" >
+
+        <fragment
+            android:id="@+id/maplist"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/lytContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lytMap"
+        android:background="@drawable/bg_1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_1"
+            android:drawableLeft="@drawable/call_icon"
+            android:drawablePadding="2dp"
+            android:gravity="left|center"
+            android:text="@string/Callus"
+            android:textColor="@color/black"
+            android:paddingLeft="100dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white" >
+        </View>
+
+        <Button
+            android:id="@+id/btnEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_1"
+            android:drawablePadding="2dp"
+            android:paddingLeft="100dp"
+            android:text="@string/emailus"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/email_icon"
+            android:textSize="14sp"
+            android:gravity="left|center"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

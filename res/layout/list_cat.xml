@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp" 
+    >
+
+    <ImageView
+        android:id="@+id/imagViewSub"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/app_name" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/txtViewListSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/imagViewSub"
+        android:ellipsize="marquee"
+        android:text="@+id/textView1"
+        android:textSize="18sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/SubtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/black"
+        android:layout_toRightOf="@+id/imagViewSub"
+        android:layout_below="@id/txtViewListSub"
+        android:textSize="12sp" 
+        android:textStyle="bold"
+        >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/nextNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/menu" />
+
+</RelativeLayout>

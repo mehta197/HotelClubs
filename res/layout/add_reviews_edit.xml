@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/addReviewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/addreviewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_1"
+            android:contentDescription="@string/backbutton"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/addreviewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/addreviewBack"
+            android:background="@drawable/alt"
+            android:gravity="center"
+            android:text="@string/addReview"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addimgRefreshHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/addReviewHeader" >
+
+        <ImageView
+            android:id="@+id/addimgRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_1"
+            android:contentDescription="@string/refresh"
+            android:src="@drawable/refresh_icon" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/middleReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addReviewHeader"
+        android:background="@drawable/pattern"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" >
+        </View>
+
+        <EditText
+            android:id="@+id/EditTextFeedbackBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:gravity="left"
+            android:hint="@string/body"
+            android:inputType="textMultiLine"
+            android:lines="10"
+            android:textAlignment="textStart"
+            android:textColorHint="@color/blue"
+            android:textDirection="ltr" >
+        </EditText>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" >
+        </View>
+
+        <EditText
+            android:id="@+id/EditTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:hint="@string/Name"
+            android:inputType="textPersonName"
+            android:textAlignment="textStart"
+            android:textColorHint="@color/blue"
+            android:textDirection="ltr" >
+        </EditText>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/addReviewFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" >
+
+        <Button
+            android:id="@+id/submitReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_1"
+            android:gravity="center"
+            android:text="@string/Submit"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>
