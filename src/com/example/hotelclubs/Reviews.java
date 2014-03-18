@@ -62,6 +62,7 @@ public class Reviews extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//DO you work here
+				onBackPressed();
 				Intent intent=new Intent(v.getContext(), AddReviews.class);
 				//Intent intent = new Intent(v.getContext(), MyListActivity.class);
 				startActivity(intent);	
@@ -72,7 +73,6 @@ public class Reviews extends Activity{
 			//@Override
 			public void onClick(View v) {
 				onBackPressed();
-			
 				Intent intent=new Intent(v.getContext(), MainActivity.class);
 				startActivity(intent);         
 			}        

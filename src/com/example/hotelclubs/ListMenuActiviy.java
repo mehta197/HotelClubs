@@ -48,10 +48,6 @@ public class ListMenuActiviy extends Activity {
 		ImageView  refresh=(ImageView) findViewById(R.id.imgRefresh);
 		refresh.setLayoutParams(lp);;  
 
-
-
-
-		overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_in_left);
 		adapterCategoryListAdapter = new CategoryListAdapter(this,this.listItem, this.integersList,this.itemNumbers);
 		ListView	listView = (ListView) findViewById(R.id.listCat);
 		listView.setAdapter(adapterCategoryListAdapter);
@@ -70,9 +66,9 @@ public class ListMenuActiviy extends Activity {
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				onBackPressed();
-				Intent intent=new Intent(v.getContext(), MainActivity.class);
 				
+				onBackPressed();
+				Intent intent=new Intent(v.getContext(), MainActivity.class);				
 				startActivity(intent);	
 			}
 		});

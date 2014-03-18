@@ -3,47 +3,42 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/lytContent"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-       	<ImageView
+        <ImageView
             android:id="@+id/imgCover"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:contentDescription="@string/Copyright"
             android:scaleType="fitXY"
-            android:src="@drawable/images" />
+            android:src="@drawable/header" />
 
-        <ImageView
-            android:id="@+id/txtCaption"
-            android:layout_width="match_parent"
-            android:background="@drawable/bg_image"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/menu"
-            android:scaleType="fitXY"
-            android:src="@drawable/logo" />
 
-        <GridView
-            android:id="@+id/listMainMenu"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/loading_bg"
-            android:cacheColorHint="#00000000"
-            android:dividerHeight="1dip"
-            android:fadeScrollbars="true"
-            android:listSelector="@drawable/menu_list_selector"
-            android:numColumns="3"
-            android:stretchMode="columnWidth" />
-    </LinearLayout>
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/listMainMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lytContent"
+        android:background="@drawable/loading_bg"
+        android:cacheColorHint="#00000000"
+        android:dividerHeight="1dip"
+        android:fadeScrollbars="true"
+        android:listSelector="@drawable/menu_list_selector"
+        android:numColumns="3"
+        android:stretchMode="columnWidth" />
 
     <RelativeLayout
         android:id="@+id/footer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_below="@+id/listMainMenu"
         android:background="@drawable/black_bg"
         android:orientation="vertical" >
 
@@ -56,9 +51,11 @@
 
         <TextView
             android:id="@+id/txtCopyright"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/footerImage"
+            android:paddingTop="15dp"
+            android:paddingLeft="5dp"
             android:text="@string/Copyright"
             android:textSize="14sp" />
     </RelativeLayout>
