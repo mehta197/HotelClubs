@@ -71,7 +71,7 @@ public class GirdViewCustomAdapter extends BaseAdapter
 		}
 		holder.textView.setText(this.contentDescription.get(position));
 		holder.imageView.setImageResource(this.imagePostiont.get(position));
-		holder.imageView.setLayoutParams(new RelativeLayout.LayoutParams((int)(weight*.33),(int)(height*.45)));
+		holder.imageView.setLayoutParams(new RelativeLayout.LayoutParams((int)(weight*.33),(int)(height*.5)));
 
 		return convertView;
 	}

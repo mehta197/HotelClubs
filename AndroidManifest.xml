@@ -35,7 +35,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCx9QFuSyv9J6o5xd5XH_UB039j5O3VNRs" />
+            android:value="AIzaSyB0dwdkYp2gQXlL3OAz4GOy2R-H4i8-e9k" />
 
         <activity
             android:name="com.example.hotelclubs.SplashScreen"

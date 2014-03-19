@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -27,20 +26,16 @@ public class MainActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		this.makeList();
-		//Getting the size of the device
-		ImageView imageView = (ImageView) findViewById(R.id.imgCover);
-		//ImageView imageViewHeader = (ImageView) findViewById(R.id.txtCaption);
-		ImageView imageViewFooter=(ImageView) findViewById(R.id.footerImage);
-		
 
+		ImageView imageView = (ImageView) findViewById(R.id.imgCover);
+		ImageView imageViewFooter=(ImageView) findViewById(R.id.footerImage);
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
 
 		int wPix = dm.widthPixels;
 		int hPix =  (int) ((dm.heightPixels)*.40);
-		// change menu image width and height
+
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(wPix, hPix);
 		imageView.setLayoutParams(lp);
 
@@ -48,26 +43,23 @@ public class MainActivity extends Activity {
 
 		int wPixFooter = (int) (dm.widthPixels*.25);
 		int hPixFooter = (int) (dm.heightPixels*.1);
-		// change menu image width and height
+
 		RelativeLayout.LayoutParams footerSize = new RelativeLayout.LayoutParams(wPixFooter,hPixFooter);
 		imageViewFooter.setLayoutParams(footerSize);
-		//layout.setLayoutParams(new RelativeLayout.LayoutParams(dm.widthPixels,(int)(dm.heightPixels*.1)));
+
 
 		customAdapter = new GirdViewCustomAdapter(this,this.arrayList, this.integersList,hPix,wPix);
 		GridView	gridView = (GridView) findViewById(R.id.listMainMenu);
-		/*LayoutParams layoutParams=gridView.getLayoutParams();
-		layoutParams.height=(int)(dm.heightPixels*.5);
-		gridView.setLayoutParams(layoutParams);*/
+
 		gridView.setAdapter(customAdapter);
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
-
+			
 				String text=customAdapter.getItem(position).toString();
 				if(text.equalsIgnoreCase("Reviews"))
 				{
-
 					Intent intent=new Intent(v.getContext(), Reviews.class);
 					startActivity(intent);	
 				}

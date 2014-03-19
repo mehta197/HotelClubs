@@ -56,7 +56,7 @@ public class ListMenuActiviy extends Activity {
 		listView.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				
+				onBackPressed();
 			}
 		});
 
@@ -66,7 +66,6 @@ public class ListMenuActiviy extends Activity {
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
 				onBackPressed();
 				Intent intent=new Intent(v.getContext(), MainActivity.class);				
 				startActivity(intent);	
@@ -106,6 +105,7 @@ public class ListMenuActiviy extends Activity {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
+		super.onBackPressed();
 		finish();
 	}
 } 

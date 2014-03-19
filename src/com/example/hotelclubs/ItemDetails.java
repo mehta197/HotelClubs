@@ -49,9 +49,6 @@ public class ItemDetails extends Activity{
 		textView.setGravity(17);
 		textView.setMinHeight((int) (hPix*.1));
 
-
-
-
 		textView=(TextView) findViewById(R.id.itemdetails);
 		textView.setText("It's not clear what the indication was, but senior administration officials told ABC News "
 				+ "the missing Malaysian flight continued to ping a satellite on an hourly basis after"
@@ -69,7 +66,11 @@ public class ItemDetails extends Activity{
 			}        
 		});
 
-		
-		
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		finish();
 	}
 }

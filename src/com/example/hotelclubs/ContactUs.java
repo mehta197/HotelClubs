@@ -43,22 +43,27 @@ public class ContactUs extends FragmentActivity{
 		targetItem.setLayoutParams(adaptLayout);  
 		adaptLayout = new RelativeLayout.LayoutParams((int)(wPix*.1), (int) ((int)hPix*.1));
 		btnBack.setLayoutParams(adaptLayout);
+		try{	
+			mMapFragment = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.maplist));
+			mMap = mMapFragment.getMap();
 
-		mMapFragment = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.maplist));
-		mMap = mMapFragment.getMap();
+			FrameLayout frameLayout=(FrameLayout) findViewById(R.id.lytMap);
 
-		FrameLayout frameLayout=(FrameLayout) findViewById(R.id.lytMap);
-
-		android.view.ViewGroup.LayoutParams fp = frameLayout.getLayoutParams();
-		fp.width = wPix;
-		fp.height = (int)(hPix*.6);
-		mMap.setMyLocationEnabled(true);
-		// For dropping a marker at a point on the Map
-		mMap.addMarker(new MarkerOptions().position(new LatLng(45.35708190086541, -75.80015299783554)).title("My Home").snippet("Home Address"));
-		// For zooming automatically to the Dropped PIN Location
-		mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.35708190086541,
-				-75.80015299783554), 12.0f));
-
+			android.view.ViewGroup.LayoutParams fp = frameLayout.getLayoutParams();
+			fp.width = wPix;
+			fp.height = (int)(hPix*.6);
+			mMap.setMyLocationEnabled(true);
+			// For dropping a marker at a point on the Map
+			mMap.addMarker(new MarkerOptions().position(new LatLng(45.35708190086541, -75.80015299783554)).title("My Home").snippet("Home Address"));
+			// For zooming automatically to the Dropped PIN Location
+			mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.35708190086541,
+					-75.80015299783554), 12.0f));
+		}
+		catch(Exception e)
+		{
+			Toast.makeText(ContactUs.this, 
+					"Google Play Service is required", Toast.LENGTH_SHORT).show();
+		}
 		Button button=(Button) findViewById(R.id.btnCall);
 		LinearLayout.LayoutParams adaptLayoutLine = new LinearLayout.LayoutParams(wPix, (int) ((int)hPix*.13));
 		button.setLayoutParams(adaptLayoutLine);
@@ -104,7 +109,7 @@ public class ContactUs extends FragmentActivity{
 				startActivity(iSend);
 			}
 		});
-		
+
 		btnBack.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

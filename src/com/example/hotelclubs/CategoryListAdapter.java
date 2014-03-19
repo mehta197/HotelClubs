@@ -66,15 +66,12 @@ public class CategoryListAdapter extends BaseAdapter {
 		holder.txtSubText = (TextView) convertView.findViewById(R.id.SubtextView);
 		holder.imgThumb = (ImageView) convertView.findViewById(R.id.imagViewSub);
 		holder.imgNext = (ImageView) convertView.findViewById(R.id.nextNav);
-
 		holder.txtText.setText(this.contentDescription.get(position));
 		holder.txtSubText.setText(this.subNumbers.get(position));
 		holder.imgThumb.setImageResource(this.imagePostion.get(0));
 		holder.imgNext.setImageResource(R.drawable.select_icon_brown);
-		
+
 		convertView.setOnClickListener(new OnClickListener() {
-			
-			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -85,8 +82,7 @@ public class CategoryListAdapter extends BaseAdapter {
 				v.setBackgroundResource(R.drawable.bg_1);
 				Intent intent=new Intent(v.getContext(),ItemDetails.class);
 				((Activity) activity).startActivity(intent);
-				
-				
+				activity.finish();
 			}
 		});
 

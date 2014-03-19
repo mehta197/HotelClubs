@@ -51,7 +51,7 @@ public class Gallery extends Activity{
 					long arg3) {
 				// TODO Auto-generated method stub
 				// Sending image id to FullScreenActivity
-				
+				onBackPressed();
 				Intent i = new Intent(getApplicationContext(), FullImageActivity.class);
 				i.putExtra("nameOfPhoto", arg2);
 				// passing array index

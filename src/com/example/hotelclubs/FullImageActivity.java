@@ -47,7 +47,9 @@ public class FullImageActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
+		super.onBackPressed();
 		finish();
+		
 	}
 	private ArrayList<Integer> photos=new ArrayList<Integer>();
 	public  void photoList()
